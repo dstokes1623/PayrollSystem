@@ -11,4 +11,7 @@ package DataAccess;
  */
 public class PayrollSystemDA {
     
+    public static void initialize() {
+        EmployeeDA.initialize();
+    }
 }

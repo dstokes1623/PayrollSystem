@@ -5,17 +5,27 @@
  */
 package domain;
 
-/**
- *
- * @author stoke
- */
+import DataAccess.PayrollSystemDA;
+import java.util.ArrayList;
+
+
 public class PayrollSystem {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ArrayList<Employee> employees;
+        int i;
+        
+        PayrollSystemDA.initialize();
+        
+        employees = Employee.getEmployees();
+        
+        System.out.println("\nEMPLOYEES\n");
+        for(i = 0; i < employees.size(); i++){
+            System.out.println(employees.get(i));
+        }
     }
     
 }
