@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Serves as the data access class for timecards will later be accessing database instead of arraylists
  */
 package DataAccess;
 
@@ -11,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author stoke
+ * @author Dante Stokes
  */
 public class TimecardDA {
      private static ArrayList<Timecard> timecards = new ArrayList<Timecard>();

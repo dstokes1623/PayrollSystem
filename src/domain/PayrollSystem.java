@@ -14,16 +14,22 @@ public class PayrollSystem {
      */
     public static void main(String[] args) {
         ArrayList<Employee> employees;
+        ArrayList<Timecard> timecards;
         int i;
         
         PayrollSystemDA.initialize();
         
         employees = Employee.getEmployees();
+        timecards = Timecard.getTimecards();
         
         System.out.println("\nEMPLOYEES\n");
         for(i = 0; i < employees.size(); i++){
             System.out.println(employees.get(i));
         }
+        
+        System.out.println("\nTIMECARDS\n");
+        for(i = 0; i < timecards.size(); i++){
+            System.out.println(timecards.get(i));
     }
     
 }

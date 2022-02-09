@@ -3,6 +3,8 @@
  */
 package domain;
 
+import DataAccess.TimecardDA;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -55,6 +57,10 @@ public class Timecard {
           this.overtimeHoursWorked = hoursWorked - 40; // overtime hours calculated by hours worked past a 40 hour work week
         } else this.overtimeHoursWorked = 0;
         
+    }
+    
+    public static ArrayList<Timecard> getTimecards(){
+        return TimecardDA.getTimecards();
     }
 
     @Override
