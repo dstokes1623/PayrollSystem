@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Class contains the main method for the application and will initialize the DAs as well as print out the information in the DAs
  */
 package domain;
 

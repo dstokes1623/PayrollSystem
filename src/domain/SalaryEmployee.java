@@ -1,13 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class is a subclass of Employee and will account for the employees that make an annual salary rather than an hourly rate
  */
 package domain;
 
 /**
  *
- * @author stoke
+ * @author Dante Stokes
  */
 public class SalaryEmployee extends Employee {
     private double annualSalary;
@@ -25,6 +23,11 @@ public class SalaryEmployee extends Employee {
     @Override
     public String toString(){
         return super.toString() + ", Annual Salary: " + annualSalary;
+    }
+
+    public SalaryEmployee(double annualSalary, int employeeID, String lastName, String firstName, long ssNumber) {
+        super(employeeID, lastName, firstName, ssNumber);
+        this.annualSalary = annualSalary;
     }
     
 }

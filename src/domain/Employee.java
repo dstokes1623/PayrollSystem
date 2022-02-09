@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *This class is a superclass that serves as an interface for hourly and salary employees
  */
 package domain;
 
@@ -10,13 +8,20 @@ import java.util.ArrayList;
 
 /**
  *
- * @author stoke
+ * @author Dante Stokes
  */
 public abstract class Employee {
     private int employeeID;
     private String lastName;
     private String firstName;
     private long ssNumber;
+
+    public Employee(int employeeID, String lastName, String firstName, long ssNumber) {
+        this.employeeID = employeeID;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.ssNumber = ssNumber;
+    }
 
     public int getEmployeeID() {
         return employeeID;
