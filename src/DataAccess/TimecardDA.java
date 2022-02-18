@@ -16,11 +16,11 @@ public class TimecardDA {
      
       public static void initialize(){
         //Salary employees
-        Timecard timecard1 = new Timecard(new Date(2022, 1, 25), 103, 45.5);
-        Timecard timecard2 = new Timecard(new Date(2022, 1, 28), 103, 40);
+        Timecard timecard1 = new Timecard(new Date(2022, 1, 25), 103, 10.5);
+        Timecard timecard2 = new Timecard(new Date(2022, 1, 28), 103, 8);
         
-        Timecard timecard3 = new Timecard(new Date(2022, 2, 1), 104, 42);
-        Timecard timecard4 = new Timecard(new Date(2022, 1, 25), 104, 35);
+        Timecard timecard3 = new Timecard(new Date(2022, 2, 1), 104, 12);
+        Timecard timecard4 = new Timecard(new Date(2022, 1, 25), 104, 8.5);
         
         timecards.add(timecard1);
         timecards.add(timecard2);

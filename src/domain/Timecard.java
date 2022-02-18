@@ -53,8 +53,8 @@ public class Timecard {
         this.date = date;
         this.employeeID = employeeID;
         this.hoursWorked = hoursWorked;
-        if(hoursWorked > 40){
-          this.overtimeHoursWorked = hoursWorked - 40; // overtime hours calculated by hours worked past a 40 hour work week
+        if(hoursWorked > 8){
+          this.overtimeHoursWorked = hoursWorked - 8; // overtime hours calculated by hours worked past a 40 hour work day
         } else this.overtimeHoursWorked = 0;
         
     }

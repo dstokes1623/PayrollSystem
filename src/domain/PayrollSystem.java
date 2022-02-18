@@ -30,6 +30,6 @@ public class PayrollSystem {
         System.out.println("\nTIMECARDS\n");
         for(i = 0; i < timecards.size(); i++){
             System.out.println(timecards.get(i));
+        }
     }
-    
 }
