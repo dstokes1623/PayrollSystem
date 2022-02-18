@@ -58,12 +58,14 @@ public class Payroll {
         this.netPay = netPay;
     }
     
-    public Payroll(Date date, int employeeID, double grossPay, double totalDeductions, double netPay) {
-        this.date = date;
-        this.employeeID = employeeID;
-        this.grossPay = grossPay;
-        this.totalDeductions = totalDeductions;
-        this.netPay = netPay;
+    public double calculateNetpay(Timecard timecard, Employee emp){
+        double hoursWorked = timecard.getHoursWorked();
+        double overtimeHours = timecard.getOvertimeHoursWorked();
+        double salary = emp.getAnnualSalary() / 52;
+        double hourlyRate = emp.getHourlyRate();
+    }
+    public void calculatePayroll(Date weekEnding){
+        
     }
 
     @Override

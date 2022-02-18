@@ -5,6 +5,9 @@
  */
 package domain;
 
+import DataAccess.WithholdingTypeDA;
+import java.util.ArrayList;
+
 /**
  *
  * @author stoke
@@ -46,5 +49,12 @@ public class WithholdingType {
     public void setRate(double rate) {
         this.rate = rate;
     }
-    
+     public static ArrayList<WithholdingType> getWithholdingTypes(){
+        return WithholdingTypeDA.getWithholdingTypes();
+    }
+
+    @Override
+    public String toString() {
+        return "Withholding ID: " + withholdingID + ", Description: " + description + ", Amount: " + amount + ", Rate: " + rate;
+    }
 }

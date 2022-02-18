@@ -17,15 +17,21 @@ public class WithholdingTypeDA {
      
       public static void initialize(){
         
-        WithholdingType type1;
-        WithholdingType type2;
+        WithholdingType type1 = new WithholdingType();
+        WithholdingType type2 = new WithholdingType();
         
         type1.setWithholdingID(123);
+        type1.setDescription("Social Security");
+        type1.setRate(0.03);
+        
+        type2.setWithholdingID(456);
+        type2.setDescription("401k");
+        type2.setAmount(200.00);
         
         withholdingTypes.add(type1);
         withholdingTypes.add(type2);
     }
-    public static ArrayList<WithholdingType> getTimecards(){
+    public static ArrayList<WithholdingType> getWithholdingTypes(){
         return withholdingTypes;
     }
 }

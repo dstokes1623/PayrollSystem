@@ -63,6 +63,14 @@ public abstract class Employee {
         
     }
     
+    public double getHourlyRate(){
+        return 0.0;
+    }
+    
+    public void setHourlyRate(){
+    }
+    
+    
     public static ArrayList<Employee> getEmployees(){
         return EmployeeDA.getEmployees();
     }
