@@ -34,4 +34,24 @@ public class WithholdingTypeDA {
     public static ArrayList<WithholdingType> getWithholdingTypes(){
         return withholdingTypes;
     }
+    public static void addWithholdingType(WithholdingType withholdingType){
+        withholdingTypes.add(withholdingType);
+    }
+
+    public static double calculateWithholding(double grossPay){
+        double totalWithholding = 0;
+        double amount;
+        double rate;
+
+        for(int i = 0; i < withholdingTypes.size(); i++){
+            amount = withholdingTypes.get(i).getAmount();
+            rate = withholdingTypes.get(i).getRate();
+            if(amount > 0){
+                totalWithholding += amount;
+            } else if(rate > 0){
+                totalWithholding += (grossPay * rate);
+            }
+        }
+        return totalWithholding;
+    }
 }

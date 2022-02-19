@@ -16,6 +16,7 @@ public class PayrollSystem {
         ArrayList<Employee> employees;
         ArrayList<Timecard> timecards;
         ArrayList<WithholdingType> withholdingTypes;
+        ArrayList<Payroll> payroll;
         int i;
         
         PayrollSystemDA.initialize();

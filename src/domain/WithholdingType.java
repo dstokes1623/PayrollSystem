@@ -53,6 +53,10 @@ public class WithholdingType {
         return WithholdingTypeDA.getWithholdingTypes();
     }
 
+    public static double calculateWithholding(double grossPay){
+        return WithholdingTypeDA.calculateWithholding(grossPay);
+    }
+
     @Override
     public String toString() {
         return "Withholding ID: " + withholdingID + ", Description: " + description + ", Amount: " + amount + ", Rate: " + rate;

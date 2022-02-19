@@ -54,13 +54,16 @@ public class Timecard {
         this.employeeID = employeeID;
         this.hoursWorked = hoursWorked;
         if(hoursWorked > 8){
-          this.overtimeHoursWorked = hoursWorked - 8; // overtime hours calculated by hours worked past a 40 hour work day
+          this.overtimeHoursWorked = hoursWorked - 8; // overtime hours calculated by hours worked past a 8 hour work day
         } else this.overtimeHoursWorked = 0;
         
     }
     
     public static ArrayList<Timecard> getTimecards(){
         return TimecardDA.getTimecards();
+    }
+    public static ArrayList<Timecard> getTimecardsByID(int empID){
+        return TimecardDA.getTimecardsByID(empID);
     }
 
     @Override

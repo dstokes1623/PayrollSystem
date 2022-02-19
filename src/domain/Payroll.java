@@ -6,6 +6,7 @@
 package domain;
 
 import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -58,14 +59,12 @@ public class Payroll {
         this.netPay = netPay;
     }
     
-    public double calculateNetpay(Timecard timecard, Employee emp){
-        double hoursWorked = timecard.getHoursWorked();
-        double overtimeHours = timecard.getOvertimeHoursWorked();
-        double salary = emp.getAnnualSalary() / 52;
-        double hourlyRate = emp.getHourlyRate();
-    }
     public void calculatePayroll(Date weekEnding){
-        
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(weekEnding);
+
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.get(Calendar.DAY_OF_MONTH)-6);
+        Date weekBefore = calendar.getTime();
     }
 
     @Override

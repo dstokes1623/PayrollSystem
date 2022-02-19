@@ -19,6 +19,7 @@ public class HourlyEmployee extends Employee {
         //that the user doesn't have to do the math themselves. If they need to override default, setOvertimeRate can be used.
     }
 
+    @Override
     public double getHourlyRate() {
         return hourlyRate;
     }
@@ -27,12 +28,17 @@ public class HourlyEmployee extends Employee {
         this.hourlyRate = hourlyRate;
     }
 
+    @Override
     public double getOvertimeRate() {
         return overtimeRate;
     }
 
     public void setOvertimeRate(double overtimeRate) {
         this.overtimeRate = overtimeRate;
+    }
+    public double calculateGrossPay(double hoursWorked, double overtimeHours){
+        double regularHours = hoursWorked - overtimeHours;
+        return (regularHours * this.hourlyRate) + (overtimeHours * this.overtimeRate);
     }
     
     @Override

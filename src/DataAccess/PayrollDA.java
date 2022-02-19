@@ -18,7 +18,7 @@ public class PayrollDA {
       public static void initialize(){
        
     }
-    public static ArrayList<Payroll> getTimecards(){
+    public static ArrayList<Payroll> getPayroll(){
         return payroll;
     }
 }

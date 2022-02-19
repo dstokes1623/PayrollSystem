@@ -70,6 +70,15 @@ public abstract class Employee {
     public void setHourlyRate(){
     }
     
+    public double getOvertimeRate(){
+        return 0.0;
+    }
+
+    public void setOvertimeRate(){}
+
+    public double calculateGrossPay(){
+        return 0.0;
+    }
     
     public static ArrayList<Employee> getEmployees(){
         return EmployeeDA.getEmployees();

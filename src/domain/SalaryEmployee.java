@@ -30,4 +30,7 @@ public class SalaryEmployee extends Employee {
         this.annualSalary = annualSalary;
     }
     
+    public double calculateGrossPay(){
+        return this.annualSalary / 52;
+    }
 }

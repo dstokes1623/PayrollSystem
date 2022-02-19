@@ -33,4 +33,18 @@ public class EmployeeDA {
     public static ArrayList<Employee> getEmployees(){
         return employees;
     }
+    public static void addEmployee(Employee emp){
+        employees.add(emp);
+    }
+    public static ArrayList<Employee> getEmployeesByID(int empID){
+            ArrayList<Employee> employeesByID = new ArrayList<Employee>();
+    
+            for(Employee employee : employees){
+                if(employee.getEmployeeID() == empID){
+                    employeesByID.add(employee);
+                }
+            }
+            return employeesByID;
+        }
+    }
 }
