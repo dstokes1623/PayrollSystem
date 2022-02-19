@@ -15,6 +15,6 @@ public class PayrollSystemDA {
         EmployeeDA.initialize();
         TimecardDA.initialize();
         WithholdingTypeDA.initialize();
-        
+        PayrollDA.initialize();
     }
 }

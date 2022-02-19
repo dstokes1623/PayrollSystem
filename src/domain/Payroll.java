@@ -5,6 +5,9 @@
  */
 package domain;
 
+import DataAccess.PayrollDA;
+import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
 
@@ -58,17 +61,53 @@ public class Payroll {
     public void setNetPay(double netPay) {
         this.netPay = netPay;
     }
-    
-    public void calculatePayroll(Date weekEnding){
+    public static ArrayList<Payroll> getPayroll(){
+        return PayrollDA.getPayroll();
+    }
+    public void calculatePayroll(Date weekEnding, Employee emp){
+        double grossPay = 0;
+        
+        if(emp instanceof SalaryEmployee){
+                grossPay = emp.calculateGrossPay();
+          }
+        this.date = weekEnding;
+        this.employeeID = emp.getEmployeeID();
+        this.grossPay = grossPay;
+        this.totalDeductions = WithholdingType.calculateWithholding(grossPay);
+        this.netPay = this.grossPay - this.totalDeductions;
+        
+    }
+    public void calculatePayroll(Date weekEnding, Employee emp, Timecard timecard){
+        
+        double grossPay = 0;
+        
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(weekEnding);
-
+        //Get date a week before date entered
         calendar.set(Calendar.DAY_OF_MONTH, calendar.get(Calendar.DAY_OF_MONTH)-6);
         Date weekBefore = calendar.getTime();
+        if(emp instanceof SalaryEmployee){
+                grossPay = emp.calculateGrossPay();
+          }
+        if(timecard.getDate().compareTo(weekEnding) < 0 && timecard.getDate().compareTo(weekBefore) > 0){
+            if(emp instanceof HourlyEmployee && timecard.getEmployeeID() == emp.getEmployeeID()){
+                grossPay = emp.calculateGrossPay(timecard.getHoursWorked(), timecard.getOvertimeHoursWorked());
+            } 
+        }
+        this.date = weekEnding;
+        this.employeeID = emp.getEmployeeID();
+        this.grossPay = grossPay;
+        this.totalDeductions = WithholdingType.calculateWithholding(grossPay);
+        this.netPay = this.grossPay - this.totalDeductions;
+        
     }
 
     @Override
     public String toString() {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        String grossPay = formatter.format(this.grossPay);
+        String totalDeductions = formatter.format(this.totalDeductions);
+        String netPay = formatter.format(this.netPay);
         return "Date: " + date + ", Employee ID: " + employeeID + ", Gross Pay: " + grossPay + ", Total Deductions: " + totalDeductions + ", Net Pay: " + netPay;
     }
     

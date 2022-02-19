@@ -6,6 +6,7 @@
 package domain;
 
 import DataAccess.WithholdingTypeDA;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 /**
@@ -59,6 +60,8 @@ public class WithholdingType {
 
     @Override
     public String toString() {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        String amount = formatter.format(this.amount);
         return "Withholding ID: " + withholdingID + ", Description: " + description + ", Amount: " + amount + ", Rate: " + rate;
     }
 }

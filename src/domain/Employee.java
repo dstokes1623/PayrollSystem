@@ -79,6 +79,9 @@ public abstract class Employee {
     public double calculateGrossPay(){
         return 0.0;
     }
+    public double calculateGrossPay(double hoursWorked, double overtimeHours){
+        return 0.0;
+    }
     
     public static ArrayList<Employee> getEmployees(){
         return EmployeeDA.getEmployees();

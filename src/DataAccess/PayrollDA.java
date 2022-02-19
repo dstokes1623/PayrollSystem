@@ -16,7 +16,15 @@ public class PayrollDA {
      private static ArrayList<Payroll> payroll = new ArrayList<Payroll>();
      
       public static void initialize(){
+       Payroll payroll1 = new Payroll();
+       Payroll payroll2 = new Payroll();
+       Payroll payroll3 = new Payroll();
+       Payroll payroll4 = new Payroll();
        
+       payroll.add(payroll1);
+       payroll.add(payroll2);
+       payroll.add(payroll3);
+       payroll.add(payroll4);
     }
     public static ArrayList<Payroll> getPayroll(){
         return payroll;

@@ -3,6 +3,8 @@
  */
 package domain;
 
+import java.text.NumberFormat;
+
 /**
  *
  * @author Dante Stokes
@@ -36,6 +38,8 @@ public class HourlyEmployee extends Employee {
     public void setOvertimeRate(double overtimeRate) {
         this.overtimeRate = overtimeRate;
     }
+    
+    @Override
     public double calculateGrossPay(double hoursWorked, double overtimeHours){
         double regularHours = hoursWorked - overtimeHours;
         return (regularHours * this.hourlyRate) + (overtimeHours * this.overtimeRate);
@@ -43,6 +47,9 @@ public class HourlyEmployee extends Employee {
     
     @Override
     public String toString(){
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        String hourlyRate = formatter.format(this.hourlyRate);
+        String overtimeRate = formatter.format(this.overtimeRate);
         return super.toString() + ", Hourly Rate: " + hourlyRate + ", Overtime Rate: " + overtimeRate;
     }
 }

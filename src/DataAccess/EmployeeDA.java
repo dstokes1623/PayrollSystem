@@ -22,8 +22,8 @@ public class EmployeeDA {
         Employee emp1 = new SalaryEmployee(57000, 101,"Brown", "Bob", 555551234);
         Employee emp2 = new SalaryEmployee(59000, 102,"Smith", "Angie", 123456789);
         
-        Employee emp3 = new HourlyEmployee(18.50, 102,"Robinson", "Alex", 456123456);
-        Employee emp4 = new HourlyEmployee(18.50, 102,"Madison", "Mikayla", 789015678);
+        Employee emp3 = new HourlyEmployee(18.50, 103,"Robinson", "Alex", 456123456);
+        Employee emp4 = new HourlyEmployee(18.50, 104,"Madison", "Mikayla", 789015678);
         
         employees.add(emp1);
         employees.add(emp2);
@@ -47,4 +47,4 @@ public class EmployeeDA {
             return employeesByID;
         }
     }
-}
+

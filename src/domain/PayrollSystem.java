@@ -4,7 +4,9 @@
 package domain;
 
 import DataAccess.PayrollSystemDA;
+import DataAccess.TimecardDA;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class PayrollSystem {
@@ -24,6 +26,7 @@ public class PayrollSystem {
         employees = Employee.getEmployees();
         timecards = Timecard.getTimecards();
         withholdingTypes = WithholdingType.getWithholdingTypes();
+        payroll = Payroll.getPayroll();
         
         System.out.println("\nEMPLOYEES\n");
         for(i = 0; i < employees.size(); i++){
@@ -38,6 +41,19 @@ public class PayrollSystem {
         System.out.println("\nWITHHOLDING TYPES\n");
         for(i = 0; i < withholdingTypes.size(); i++){
             System.out.println(withholdingTypes.get(i));
+        }
+        System.out.println("\nPAYROLL\n");
+        for(int j = 0; j < payroll.size(); j++){
+            Employee emp = employees.get(j);
+            if(emp instanceof SalaryEmployee){
+                payroll.get(j).calculatePayroll(new Date(2022, 0, 29), emp);
+            }else if (emp instanceof HourlyEmployee){
+                ArrayList<Timecard> empTimecards = Timecard.getTimecardsByID(emp.getEmployeeID());
+                Timecard timecard = empTimecards.get(0);
+                payroll.get(j).calculatePayroll(new Date(2022, 0, 29), emp, timecard);
+            }
+            
+            System.out.println(payroll.get(j));
         }
     }
 }

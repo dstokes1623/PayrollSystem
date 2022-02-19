@@ -3,6 +3,8 @@
  */
 package domain;
 
+import java.text.NumberFormat;
+
 /**
  *
  * @author Dante Stokes
@@ -22,6 +24,8 @@ public class SalaryEmployee extends Employee {
     
     @Override
     public String toString(){
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        String annualSalary = formatter.format(this.annualSalary);
         return super.toString() + ", Annual Salary: " + annualSalary;
     }
 
@@ -30,6 +34,7 @@ public class SalaryEmployee extends Employee {
         this.annualSalary = annualSalary;
     }
     
+    @Override
     public double calculateGrossPay(){
         return this.annualSalary / 52;
     }
